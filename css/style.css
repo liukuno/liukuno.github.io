@@ -1,56 +1,37 @@
 *{
-	margin: 0;padding:0;
-	box-sizing: border-box;
+	margin: 0;padding: 0;
+
 }
+
 .wrap{
-	width: 350px;
-	height: 350px;
-	margin:100px auto;
-	background: #ccc
-}
-.wrap p input{
-	padding:10px;
-	width:300px;
-	margin-left: 25px;
-}
-.wrap p:nth-child(4) span{
-	width: 80px;
-	height: 25px;
-	border:1px solid #000;
-	display: inline-block;
-	text-align: center;
-	line-height: 25px;
-	font-size: 14px;
-}
-.wrap p{
-	padding-top:20px;
-}
-
-.wrap p i{
-	color: #f00;
-	font-style: normal;
-}
-.yan{
+	width: 100%;
 	position: relative;
-
 }
-.send1{
+.yuan{
+	width: 50px;
+	height: 50px;
+	background: #ccc;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 50px;
+	margin-top: 100px;
+	margin-left: 20px;
+	
+}
+.dong{
+	width: 200px;
+	height: 50px;
+	background: #f00;
+	border-radius: 30px;
 	position: absolute;
-	right:34px;
-	top:27px;
-}
+	left: -160px;top: 0;
+	 /* display: none; */ 
 
-.font{
-	padding-left: 25px;
 }
-.wrap p button{
-	width: 300px;
-	margin-left: 25px;
-	padding:10px;
-	margin-top: 10px;
-	border-radius: 10px;
-	background: #4ABF35;
-	color: #fff;
-	border:none
-
+.dong ul li{
+	float: left;
+	font-size: 18px;
+	padding-left: 15px;
+	padding-right: 10px;
+	line-height: 50px;
 }
