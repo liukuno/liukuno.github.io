@@ -1,63 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width,
-        initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link type="text/css" href="css/whyme.css" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/mui.ttf" type="text/css">
-   
-    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>周考二</title>
 </head>
+<link href="css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
 <body>
-<div class="wrap qp">
-    <div class="main qp" id="main">
-        <section id="main1" class="cont"><div>
-            <header class="header">
-                <div><span>精选</span><span>最新</span></div><b></b>
-            </header> 
-             </section>
-        <section id="main2" class="cont">
-            <header class="header1">
-            <div><span>分类</span></div>
-            <b></b></header>
-            </section>
-        <section id="main3" class="cont">
-         
-                <header class="header2"><b></b><b>Android</b><b></b></header>
-              </section>
-        <section id="main4" class="cont">
-            
-                <header class="header3"><b>我</b></header>
-               </section>
+<h1>二等奖</h1>
+<div id="wrap">
+    <div class="content">
+        <div class="first">
+            <ul id="first">
+                <li><img src="img/0.jpg"/></li>
+                <li><img src="img/1.jpg"/></li>
+                <li><img src="img/2.jpg"/></li>
+                <li><img src="img/3.jpg"/></li>
+                <li><img src="img/4.jpg"/></li>
+                <li><img src="img/5.jpg"/></li>
+                <li><img src="img/6.jpg"/></li>
+                <li><img src="img/7.jpg"/></li>
+                <li><img src="img/8.jpg"/></li>
+                <li><img src="img/9.jpg"/></li>
+                <li><img src="img/10.jpg"/></li>
+            </ul>
+        </div>
+        <div class="second">
+            <ul id="second">
+                <li><img src="img/2.jpg"/></li>
+                <li><img src="img/3.jpg"/></li>
+                <li><img src="img/4.jpg"/></li>
+                <li><img src="img/5.jpg"/></li>
+                <li><img src="img/9.jpg"/></li>
+                <li><img src="img/10.jpg"/></li>
+                <li><img src="img/6.jpg"/></li>
+                <li><img src="img/7.jpg"/></li>
+                <li><img src="img/0.jpg"/></li>
+                <li><img src="img/1.jpg"/></li>
+                <li><img src="img/8.jpg"/></li>
+            </ul>
+        </div>
+        <div class="btn" id="btn">
+            <div class="box" id="box">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="box2" id="box2">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
-    <footer class="footer">
-        <a href="#" class="on"><i></i><b>首页</b></a>
-        <a href="#"><i></i><b>分类</b></a>
-        <a href="#"><i></i><b>收藏</b></a>
-        <a href="#"><i></i><b>我</b></a>
-    </footer>
 </div>
-<script type="text/javascript" src="js/swiper.min.js"></script>
-<script type="text/javascript" src="js/zepto.min.js"></script>
-<script type="text/javascript">
-    var k;
-    $(".footer a").each(function(index){//遍历所有的H1  each是遍历
-        $(this).tap(function(){//触摸的时候触发该事件
-            $(this).addClass("on").siblings().removeClass("on");//给触碰的添加一个on，并删除别的on
-            k=index+1;
-            $(".cont:nth-child("+k+")").css({
-                '-webkit-transition':'transform 0.5s',
-                '-webkit-transform':'translateX(0%)'
-            }).siblings().css({
-                '-webkit-transition':'transform 0s',
-                '-webkit-transform':'translateX(100%)'
-            });
-        })
-    })
-
-</script>
 </body>
+<script type="text/javascript">
+    var oBtn=document.getElementById("btn"),
+        oBox=document.getElementById("box"),
+        oBox2=document.getElementById("box2"),
+        oFirst=document.getElementById("first"),
+        oSecond=document.getElementById("second");
+    var arr=[0,1,2,3,4,5,6,7,8,9,10];
+    var  i= 0,j=10;
+    function  auto(){
+        oFirst.innerHTML="<li><img src='img/"+arr[i]+".jpg'/></li>";
+        oSecond.innerHTML="<li><img src='img/"+arr[j]+".jpg'/></li>";
+        i++;
+        j--;
+        if(i>=arr.length-1){
+            i=0
+        }
+        if(j<=0){
+            j=arr.length;
+        }
+        if(i==j){
+            j=Math.round( Math.random()*10)
+        }
+    }
+    oBox.onclick=function(){
+        oBox.style.display="none";
+        oBox2.style.display="block";
+        oFirst.style.display="block";
+        oSecond.style.display="block";
+        sl= setInterval(auto,100)
+    }
+    oBox2.onclick=function(){
+        oBox.style.display="block";
+        oBox2.style.display="none";
+        oFirst.style.display="block";
+        oSecond.style.display="block";
+        sl= clearInterval(sl);
+    }
+</script>
 </html>
