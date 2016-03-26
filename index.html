@@ -1,32 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type="text/css" href="css/whyme.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/mui.ttf" type="text/css">
+   
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-	
-	
 <body>
-	<div class="wrap">
-		
-
-		<div class="dong" id="dong">
-			<ul>
-				<li>首页</li>
-				<li>收藏</li>
-				<li>我的</li>
-			</ul>
-		</div>
-<div class="yuan" id="yuan">标题</div>
-
-
-	</div>
+<div class="wrap qp">
+    <div class="main qp" id="main">
+        <section id="main1" class="cont"><div>
+            <header class="header">
+                <div><span>精选</span><span>最新</span></div><b></b>
+            </header> 
+             </section>
+        <section id="main2" class="cont">
+            <header class="header1">
+            <div><span>分类</span></div>
+            <b></b></header>
+            </section>
+        <section id="main3" class="cont">
+         
+                <header class="header2"><b></b><b>Android</b><b></b></header>
+              </section>
+        <section id="main4" class="cont">
+            
+                <header class="header3"><b>我</b></header>
+               </section>
+    </div>
+    <footer class="footer">
+        <a href="#" class="on"><i></i><b>首页</b></a>
+        <a href="#"><i></i><b>分类</b></a>
+        <a href="#"><i></i><b>收藏</b></a>
+        <a href="#"><i></i><b>我</b></a>
+    </footer>
+</div>
+<script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript">
+    var k;
+    $(".footer a").each(function(index){//遍历所有的H1  each是遍历
+        $(this).tap(function(){//触摸的时候触发该事件
+            $(this).addClass("on").siblings().removeClass("on");//给触碰的添加一个on，并删除别的on
+            k=index+1;
+            $(".cont:nth-child("+k+")").css({
+                '-webkit-transition':'transform 0.5s',
+                '-webkit-transform':'translateX(0%)'
+            }).siblings().css({
+                '-webkit-transition':'transform 0s',
+                '-webkit-transform':'translateX(100%)'
+            });
+        })
+    })
 
-
+</script>
 </body>
 </html>
